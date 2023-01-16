@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  security:
+    user:
+      password: ${ADMIN_PASSWORD:password}
+
+  elasticsearch:
+    rest:
+      uris:
+       # - http://elasticsearch:9200
+        - http://localhost:9200
+      username: elastic
+      password: ${ES_PASSWORD:password}
+
+
+logging:
+  level:
+    org:
+      apache:
+        tomcat: DEBUG
+      springframework:
+        web: DEBUG
