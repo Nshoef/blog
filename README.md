@@ -1,5 +1,8 @@
 This app enable to its user to send posts and like/dislike them.
 
+### Requirements ###
+1. a computer with docker and maven
+2. Internet connection
 
 #### Running to app ####
  
