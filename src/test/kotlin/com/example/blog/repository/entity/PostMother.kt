@@ -1,6 +1,7 @@
 package com.example.blog.repository.entity
 
 import java.time.Instant
+import java.time.temporal.ChronoUnit
 import java.util.*
 
 const val USER_1 = "user 1"
@@ -13,7 +14,7 @@ fun aPost(
     id: UUID = UUID.randomUUID(),
     content: String = "Content of the post is here",
     author: String = USER_1,
-    createdDate: Instant = Instant.now(),
+    createdDate: Instant = Instant.now().truncatedTo(ChronoUnit.MILLIS),
     rating: MutableMap<String, Boolean> = aRating()
 ) = Post(id, content, author, createdDate, rating)
 

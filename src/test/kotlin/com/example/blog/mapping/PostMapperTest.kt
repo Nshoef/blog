@@ -5,6 +5,7 @@ import com.example.blog.repository.entity.aPost
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.*
 import java.time.Instant
+import java.time.temporal.ChronoUnit
 import java.util.UUID
 
 class PostMapperTest {
@@ -15,7 +16,7 @@ class PostMapperTest {
     fun `Should map post request to post entity`() {
         val id = UUID.randomUUID()
         val request = aPostRequest()
-        val createdDate = Instant.now()
+        val createdDate = Instant.now().truncatedTo(ChronoUnit.MILLIS)
 
         val result = mapper.postRequestToEntity(id, createdDate, request)
 

@@ -5,17 +5,18 @@ import com.example.blog.api.model.PostResponse
 import com.example.blog.repository.entity.Post
 import org.springframework.stereotype.Component
 import java.time.Instant
+import java.time.temporal.ChronoUnit
 import java.util.*
 
 
 @Component
-class PostMapper{
+class PostMapper {
 
     fun postRequestToEntity(id: UUID = UUID.randomUUID(), createdDate: Instant = Instant.now(), postRequest: PostRequest) = Post(
         id = id,
         content = postRequest.content,
         author = postRequest.author,
-        createdDate = createdDate,
+        createdDate = createdDate.truncatedTo(ChronoUnit.MILLIS) ,
         rating = mutableMapOf()
     )
 

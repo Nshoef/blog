@@ -1,5 +1,6 @@
 package com.example.blog.api.controller
 
+import com.example.blog.api.model.PostResponse
 import com.example.blog.api.model.RatingRequest
 import com.example.blog.api.model.aPostRequest
 import com.example.blog.api.model.aPostResponse
@@ -98,13 +99,9 @@ class BlogControllerTest {
             .andExpect(status().isCreated)
             .andReturn()
 
-        val result = objectMapper.readValue(response.response.contentAsString, Post::class.java)
+        val result = objectMapper.readValue(response.response.contentAsString, PostResponse::class.java)
 
-        assertEquals(expected.id, result.id)
-        assertEquals(expected.author, result.author)
-        assertEquals(expected.content, result.content)
-        assertEquals(expected.createdDate, result.createdDate)
-        assertEquals(expected.rating, result.rating)
+        assertEquals(expected, result)
     }
 
     @Test
@@ -123,13 +120,9 @@ class BlogControllerTest {
             .andExpect(status().isOk)
             .andReturn()
 
-        val result = objectMapper.readValue(response.response.contentAsString, Post::class.java)
+        val result = objectMapper.readValue(response.response.contentAsString, PostResponse::class.java)
 
-        assertEquals(expected.id, result.id)
-        assertEquals(expected.author, result.author)
-        assertEquals(expected.content, result.content)
-        assertEquals(expected.createdDate, result.createdDate)
-        assertEquals(expected.rating, result.rating)
+        assertEquals(expected, result)
     }
 
     @Test
@@ -145,13 +138,9 @@ class BlogControllerTest {
             .andExpect(status().isOk)
             .andReturn()
 
-        val result = objectMapper.readValue(response.response.contentAsString, Post::class.java)
+        val result = objectMapper.readValue(response.response.contentAsString, PostResponse::class.java)
 
-        assertEquals(expected.id, result.id)
-        assertEquals(expected.author, result.author)
-        assertEquals(expected.content, result.content)
-        assertEquals(expected.createdDate, result.createdDate)
-        assertEquals(expected.rating, result.rating)
+        assertEquals(expected, result)
     }
 
     @Test
@@ -259,13 +248,9 @@ class BlogControllerTest {
             .andExpect(status().isOk)
             .andReturn()
 
-        val result = objectMapper.readValue(response.response.contentAsString, Post::class.java)
+        val result = objectMapper.readValue(response.response.contentAsString, PostResponse::class.java)
 
-        assertEquals(expected.id, result.id)
-        assertEquals(expected.author, result.author)
-        assertEquals(expected.content, result.content)
-        assertEquals(expected.createdDate, result.createdDate)
-        assertEquals(expected.rating, result.rating)
+        assertEquals(expected, result)
     }
 
     @Test
@@ -284,13 +269,9 @@ class BlogControllerTest {
             .andExpect(status().isOk)
             .andReturn()
 
-        val result = objectMapper.readValue(response.response.contentAsString, Post::class.java)
+        val result = objectMapper.readValue(response.response.contentAsString, PostResponse::class.java)
 
-        assertEquals(expected.id, result.id)
-        assertEquals(expected.author, result.author)
-        assertEquals(expected.content, result.content)
-        assertEquals(expected.createdDate, result.createdDate)
-        assertEquals(expected.rating, result.rating)
+        assertEquals(expected, result)
     }
 
     @Test
@@ -308,13 +289,9 @@ class BlogControllerTest {
             .andExpect(status().isOk)
             .andReturn()
 
-        val result = objectMapper.readValue(response.response.contentAsString, Post::class.java)
+        val result = objectMapper.readValue(response.response.contentAsString, PostResponse::class.java)
 
-        assertEquals(expected.id, result.id)
-        assertEquals(expected.author, result.author)
-        assertEquals(expected.content, result.content)
-        assertEquals(expected.createdDate, result.createdDate)
-        assertEquals(expected.rating, result.rating)
+        assertEquals(expected, result)
     }
 
     @Test
